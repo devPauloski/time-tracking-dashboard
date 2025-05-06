@@ -233,6 +233,11 @@ main {
   height: 100%;
   border-radius: 1rem;
   padding: 1.5rem;
+  cursor: pointer;
+}
+
+.card-info:hover {
+  background-color: hsl(236, 41%, 34%);
 }
 
 .activity-name {
