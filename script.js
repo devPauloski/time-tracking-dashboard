@@ -35,11 +35,11 @@ async function fetchData() {
   populate(data); 
   
   // Timeframe controls
-  const currentTimeFrames = document.querySelectorAll(".current-time");
-  const previousTimeFrames = document.querySelectorAll(".previous-time");
-
   timeFrameControls.forEach((button) => {
     button.addEventListener('click', (event) => {
+      const currentTimeFrames = document.querySelectorAll(".current-time");
+      const previousTimeFrames = document.querySelectorAll(".previous-time");
+
       data.forEach((item, index) => {
         if (button.dataset.control === "daily") {
           currentTimeFrames[index].textContent = `${item.timeframes.daily.current}hrs`;
@@ -52,7 +52,7 @@ async function fetchData() {
           previousTimeFrames[index].textContent = `Last week - ${item.timeframes.monthly.previous}hrs`;
         }
       });
-      
+
       timeFrameControls.forEach((button) => button.classList.remove("active"));
       event.target.classList.add("active");
     });
