@@ -46,10 +46,10 @@ async function fetchData() {
           previousTimeFrames[index].textContent = `Last week - ${item.timeframes.daily.previous}hrs`;
         } else if (button.dataset.control === "weekly") {
           currentTimeFrames[index].textContent = `${item.timeframes.weekly.current}hrs`;
-          previousTimeFrames[index].textContent = `Last week - ${item.timeframes.weekly.previous}hrs`;
+          previousTimeFrames[index].textContent = `Last Week - ${item.timeframes.weekly.previous}hrs`;
         } else {
           currentTimeFrames[index].textContent = `${item.timeframes.monthly.current}hrs`;
-          previousTimeFrames[index].textContent = `Last week - ${item.timeframes.monthly.previous}hrs`;
+          previousTimeFrames[index].textContent = `Last Week - ${item.timeframes.monthly.previous}hrs`;
         }
       });
 
