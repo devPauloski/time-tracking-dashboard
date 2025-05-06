@@ -89,8 +89,7 @@ main {
 
 .profile-card {
   background-color: var(--clr-navy-900);
-  border-bottom-left-radius: 0.875rem;
-  border-bottom-right-radius: 0.875rem;
+  border-radius: 1rem;
 }
 
 .profile-info {
@@ -140,7 +139,7 @@ main {
   align-items: center;
 }
 
-@media(min-width: 50em) {
+@media (min-width: 50em) {
   .timeframe-controls {
     flex-direction: column;
     align-items: start;
@@ -170,7 +169,6 @@ main {
   outline-offset: 2px;
 }
 
-
 .cards-wrapper {
   --space-24-30: clamp(1.5rem, 1.3696rem + 0.6522vw, 1.875rem);
   display: grid;
@@ -189,14 +187,14 @@ main {
   background-position-y: -8px;
   background-position-x: right 14px;
   padding-block-start: 2.375rem;
-  border-radius: 1rem;
+  border-radius: 1.125rem;
 }
 
 @media (min-width: 50em) {
   .card {
     background-size: 4.5rem;
     background-position-y: -4px;
-    padding-block-start: 40px;
+    padding-block-start: 2.5rem;
   }
 }
 
@@ -209,18 +207,22 @@ main {
   background-image: url(./images/icon-play.svg);
   background-color: var(--clr-blue-300);
 }
+
 .card.study {
   background-image: url(./images/icon-study.svg);
   background-color: var(--clr-pink-400);
 }
+
 .card.exercise {
   background-image: url(./images/icon-exercise.svg);
   background-color: var(--clr-green-400);
 }
+
 .card.social {
   background-image: url(./images/icon-social.svg);
   background-color: var(--clr-purple-600);
 }
+
 .card.self-care {
   background-image: url(./images/icon-self-care.svg);
   background-color: var(--clr-yellow-300);
@@ -242,6 +244,11 @@ main {
   margin-block-end: 1rem;
 }
 
+.activity-name h2 {
+  font-weight: var(--fw-medium);
+  font-size: 1rem;
+}
+
 .more-info-btn {
   cursor: pointer;
   display: inline-flex;
@@ -249,10 +256,6 @@ main {
   justify-content: center;
   background-color: transparent;
   border: 0;
-}
-
-.activity-name h2 {
-  font-weight: var(--fw-medium);
 }
 
 .activity-time {
@@ -263,7 +266,7 @@ main {
   gap: 0.5rem;
 }
 
-@media(min-width: 50em) {
+@media (min-width: 50em) {
   .activity-time {
     flex-direction: column;
     align-items: start;
@@ -277,7 +280,7 @@ main {
 }
 
 .previous-time {
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: var(--clr-navy-200);
 }
 
@@ -289,6 +292,7 @@ footer {
   font-size: 11px;
   text-align: center;
 }
+
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--clr-blue-300);
 }

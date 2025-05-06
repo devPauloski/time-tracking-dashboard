@@ -1,4 +1,5 @@
 const cardsWrapper = document.querySelector(".cards-wrapper");
+const timeFrameControls = document.querySelectorAll(".timeframe-controls button")
 
 const appendCard = (item) => {
   const card = document.createElement("section");
@@ -31,7 +32,31 @@ const populate = (data) => {
 async function fetchData() {
   const response = await fetch("./data.json");
   const data = await response.json();
-  populate(data);
+  populate(data); 
+  
+  // Timeframe controls
+  const currentTimeFrames = document.querySelectorAll(".current-time");
+  const previousTimeFrames = document.querySelectorAll(".previous-time");
+
+  timeFrameControls.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      data.forEach((item, index) => {
+        if (button.dataset.control === "daily") {
+          currentTimeFrames[index].textContent = `${item.timeframes.daily.current}hrs`;
+          previousTimeFrames[index].textContent = `Last week - ${item.timeframes.daily.previous}hrs`;
+        } else if (button.dataset.control === "weekly") {
+          currentTimeFrames[index].textContent = `${item.timeframes.weekly.current}hrs`;
+          previousTimeFrames[index].textContent = `Last week - ${item.timeframes.weekly.previous}hrs`;
+        } else {
+          currentTimeFrames[index].textContent = `${item.timeframes.monthly.current}hrs`;
+          previousTimeFrames[index].textContent = `Last week - ${item.timeframes.monthly.previous}hrs`;
+        }
+      });
+      
+      timeFrameControls.forEach((button) => button.classList.remove("active"));
+      event.target.classList.add("active");
+    });
+  });
 }
 
 fetchData();
