@@ -60,6 +60,7 @@ body {
   font-weight: var(--fw-regular);
   color: white;
   background-color: var(--clr-navy-950);
+  place-content: center;
 }
 
 /* Main content */
@@ -187,8 +188,7 @@ main {
 .card {
   background-repeat: no-repeat;
   background-size: 4.125rem;
-  background-position-y: -8px;
-  background-position-x: right .875rem;
+  background-position: right 1.25rem top -0.5rem;
   padding-block-start: 2.375rem;
   border-radius: 1.125rem;
 }
@@ -196,7 +196,6 @@ main {
 @media (min-width: 50em) {
   .card {
     background-size: 4.5rem;
-    background-position-y: -4px;
     padding-block-start: 2.5rem;
   }
 }
@@ -252,9 +251,8 @@ main {
   margin-block-end: 1rem;
 }
 
-.activity-name h2 {
+.activity-name h3 {
   font-weight: var(--fw-medium);
-  font-size: 1rem;
 }
 
 .more-info-btn {
@@ -292,7 +290,9 @@ main {
 }
 
 footer {
-  padding: 5%;
+  width: min(90%, 69.375rem);
+  margin-inline: auto;
+  margin-block: 1rem;
 }
 
 .attribution {

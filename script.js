@@ -8,7 +8,7 @@ const appendCard = (item) => {
   card.innerHTML = `
     <div class="card-info">
       <div class="activity-name">
-        <h2>${item.title}</h2>
+        <h3>${item.title}</h3>
         <button class="more-info-btn" aria-label="More info">
           <img src="./images/icon-ellipsis.svg" alt="">
         </button>
@@ -41,10 +41,10 @@ async function fetchData() {
       const previousTimeFrames = document.querySelectorAll(".previous-time");
 
       data.forEach((item, index) => {
-        if (button.dataset.control === "daily") {
+        if (button.dataset.timeframe === "daily") {
           currentTimeFrames[index].textContent = `${item.timeframes.daily.current}hrs`;
           previousTimeFrames[index].textContent = `Last Week - ${item.timeframes.daily.previous}hrs`;
-        } else if (button.dataset.control === "weekly") {
+        } else if (button.dataset.timeframe === "weekly") {
           currentTimeFrames[index].textContent = `${item.timeframes.weekly.current}hrs`;
           previousTimeFrames[index].textContent = `Last Week - ${item.timeframes.weekly.previous}hrs`;
         } else {
