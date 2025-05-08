@@ -2,7 +2,7 @@ const cardsWrapper = document.querySelector(".cards-wrapper");
 const timeFrameControls = document.querySelectorAll(".timeframe-controls button")
 
 const appendCard = (item) => {
-  const card = document.createElement("section");
+  const card = document.createElement("article");
   const cardClassName = `${item.title.toLowerCase().replace(' ', '-')}`;
   card.classList.add("card", cardClassName) ;
   card.innerHTML = `
